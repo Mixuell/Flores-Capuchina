@@ -1,0 +1,376 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Para Capuchina 🌻</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+
+<body class="details-locked">
+
+    <div id="petals"></div>
+
+    <main class="app">
+
+        <!-- =========================
+             PANTALLA PRINCIPAL
+        ========================== -->
+
+        <section class="hero" id="hero">
+
+            <div class="terminal">
+
+                <div class="terminal-top">
+
+                    <span class="dot red"></span>
+                    <span class="dot yellow"></span>
+                    <span class="dot green"></span>
+
+                    <span class="terminal-title">
+                        flores_amarillas.py
+                    </span>
+
+                </div>
+
+                <div class="terminal-body">
+
+                    <p class="code-line">
+                        <span class="purple">from</span>
+                        flores
+                        <span class="purple">import</span>
+                        detalle
+                    </p>
+
+                    <p class="code-line">
+                        <span class="purple">persona</span>
+                        =
+                        <span class="green-text">
+                            "Capuchina"
+                        </span>
+                    </p>
+
+                    <p class="code-line">
+                        <span class="purple">fecha</span>
+                        =
+                        <span class="green-text">
+                            "21/09"
+                        </span>
+                    </p>
+
+                    <p class="code-line">
+                        <span class="comment">
+                            # Ejecutando un pequeño detalle...
+                        </span>
+                    </p>
+
+
+                    <div class="hero-content">
+
+                        <div class="sunflower-big">
+                            🌻
+                        </div>
+
+                        <h1>
+                            Hola, Capuchina
+                        </h1>
+
+                        <p>
+                            Se ha detectado una persona
+                            con alto nivel de buena vibra.
+                        </p>
+
+                        <p class="small">
+                            No es un error del sistema.
+                            Solo quería sacarte una sonrisa. 😂
+                        </p>
+
+                        <button class="primary-btn" id="openBtn">
+
+                            <span>
+                                Ejecutar detalle
+                            </span>
+
+                            <span>
+                                ▶
+                            </span>
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             RAMO DE FLORES
+        ========================== -->
+
+        <section class="gift" id="gift">
+
+            <div class="bouquet-stage">
+
+                <div class="glow"></div>
+
+                <div class="flower f1">
+                    🌻
+                </div>
+
+                <div class="flower f2">
+                    🌼
+                </div>
+
+                <div class="flower f3">
+                    🌻
+                </div>
+
+                <div class="flower f4">
+                    🌼
+                </div>
+
+                <div class="flower f5">
+                    🌻
+                </div>
+
+                <div class="flower f6">
+                    🌼
+                </div>
+
+                <div class="flower f7">
+                    🌻
+                </div>
+
+                <div class="flower f8">
+                    🌼
+                </div>
+
+
+                <div class="bouquet-paper">
+
+                    <div class="ribbon">
+                        CAPUCHINA
+                    </div>
+
+                    <div class="paper-note">
+
+                        <span>
+                            Para Carolina
+                        </span>
+
+                        <small>
+                            pero Capuchina suena mejor 😌
+                        </small>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <span class="eyebrow">
+                    21 DE SEPTIEMBRE · 2026
+                </span>
+
+                <h2>
+                    Flores amarillas porque sí 🌻
+                </h2>
+
+
+                <p class="message">
+
+                    No sabía qué regalarte,
+                    así que elegí la opción más normal
+                    y menos exagerada:
+
+                    <strong>
+                        hacer una página con flores.
+                    </strong>
+
+                </p>
+
+
+                <p class="message">
+
+                    Feliz día, Capuchina. 💛
+
+                    <br><br>
+
+                    Que quede registrado oficialmente:
+                    eres de esas personas que hacen
+                    el día más bonito sin tanto esfuerzo.
+
+                </p>
+
+
+                <p class="joke">
+
+                    El sistema recomienda sonreír,
+                    aceptar las flores y fingir sorpresa. 😂
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             FOTO
+        ========================== -->
+
+        <section class="photo-section" id="photoSection">
+
+            <div class="photo-card">
+
+                <div class="section-label">
+                    ARCHIVO ENCONTRADO
+                </div>
+
+                <h2>
+                    Archivo clasificado: Capuchina 📸
+                </h2>
+
+
+                <div class="photo-frame">
+
+                    <img id="userPhoto" src="{{ url_for('static', filename='img/foto.jpg') }}" alt="Foto de Carolina">
+
+                    <div class="photo-placeholder" id="placeholder">
+
+                        <span>
+                            📸
+                        </span>
+
+                        <p>
+                            Coloca tu foto aquí
+                        </p>
+
+                        <small>
+                            static/img/foto.jpg
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="photo-caption">
+
+                    Prueba visual de que el algoritmo
+                    tenía buen gusto esta vez. 😂
+
+                </p>
+
+            </div>
+
+            <div class="photo-card">
+
+                <div class="section-label">
+                    EVIDENCIA SOSPECHOSA
+                </div>
+
+                <h2>
+                    Archivo donde salen los dos 📸
+                </h2>
+
+
+                <div class="photo-frame">
+
+                    <img class="tracked-photo" src="{{ url_for('static', filename='img/foto1.jpg') }}" alt="Foto de los dos">
+
+                    <div class="photo-placeholder">
+
+                        <span>
+                            📸
+                        </span>
+
+                        <p>
+                            Falta la foto chismosa
+                        </p>
+
+                        <small>
+                            static/img/foto1.jpg
+                        </small>
+
+                    </div>
+
+                </div>
+
+
+                <p class="photo-caption">
+
+                    El sistema no confirma ni niega que aqu&iacute;
+                    hay demasiada confianza para ser una simple foto. 😂
+
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =========================
+             MENSAJE FINAL
+        ========================== -->
+
+        <section class="final-section" id="finalSection">
+
+            <div class="final-card">
+
+                <div class="mini-flower">
+                    🌻
+                </div>
+
+                <h2>
+                    Pregunta de control...
+                </h2>
+
+                <p>
+                    En una escala de "meh" a "ay, qué lindo",
+                    ¿aprobamos este detalle?
+                </p>
+
+
+                <div class="actions">
+
+                    <button class="yes-btn" id="yesBtn">
+
+                        Sí 💛
+
+                    </button>
+
+
+                    <button class="no-btn" id="noBtn">
+
+                        No 😐
+
+                    </button>
+
+                </div>
+
+
+                <div id="answer"></div>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="{{ url_for('static', filename='js/app.js') }}">
+    </script>
+
+</body>
+
+</html>

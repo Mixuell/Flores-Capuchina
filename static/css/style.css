@@ -1,0 +1,991 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Inter:wght@400;500;600;700;800&display=swap');
+
+:root {
+    --yellow: #ffd21c;
+    --gold: #f0a900;
+    --dark: #11110f;
+    --card: #191916;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    min-height: 100vh;
+
+    background:
+        radial-gradient(circle at 20% 10%,
+            rgba(255, 210, 28, .12),
+            transparent 30%),
+        radial-gradient(circle at 80% 40%,
+            rgba(240, 169, 0, .08),
+            transparent 35%),
+        #0c0c0b;
+
+    color: #f8f5e8;
+
+    font-family: Inter, sans-serif;
+
+    overflow-x: hidden;
+}
+
+
+body.details-locked {
+
+    height: 100vh;
+
+    overflow: hidden;
+}
+
+
+body.details-locked .gift,
+body.details-locked .photo-section,
+body.details-locked .final-section {
+
+    display: none;
+}
+
+button {
+    font: inherit;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero {
+    min-height: 100vh;
+
+    display: grid;
+    place-items: center;
+
+    padding: 30px;
+}
+
+
+.terminal {
+
+    width: min(1000px, 100%);
+
+    border: 1px solid #3c3b31;
+
+    border-radius: 22px;
+
+    overflow: hidden;
+
+    background: rgba(20, 20, 18, .94);
+
+    box-shadow:
+        0 30px 100px rgba(0, 0, 0, .55);
+}
+
+
+.terminal-top {
+
+    height: 46px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 8px;
+
+    padding: 0 18px;
+
+    background: #25251f;
+
+    border-bottom:
+        1px solid #39382f;
+}
+
+
+.dot {
+
+    width: 11px;
+    height: 11px;
+
+    border-radius: 50%;
+}
+
+
+.red {
+    background: #ff5c57;
+}
+
+.yellow {
+    background: #ffbd2e;
+}
+
+.green {
+    background: #28c840;
+}
+
+
+.terminal-title {
+
+    margin-left: 10px;
+
+    color: #aaa796;
+
+    font:
+        13px "DM Mono",
+        monospace;
+}
+
+
+.terminal-body {
+
+    padding: 35px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+}
+
+
+.code-line {
+
+    color: #ddd9c5;
+
+    font-size: 13px;
+
+    margin-bottom: 8px;
+}
+
+
+.purple {
+    color: #d3a8ff;
+}
+
+
+.green-text {
+    color: #b8df79;
+}
+
+
+.comment {
+    color: #6d6b5c;
+}
+
+
+/* =========================
+   HERO CONTENT
+========================= */
+
+.hero-content {
+
+    max-width: 700px;
+
+    margin:
+        55px auto 30px;
+
+    text-align: center;
+}
+
+
+.sunflower-big {
+
+    font-size: 82px;
+
+    filter:
+        drop-shadow(0 10px 25px rgba(255, 202, 0, .25));
+
+    animation:
+        float 3s ease-in-out infinite;
+}
+
+
+h1 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(42px,
+            7vw,
+            76px);
+
+    letter-spacing: -3px;
+}
+
+
+.hero-content>p {
+
+    margin:
+        18px auto 0;
+
+    max-width: 560px;
+
+    color: #d4d0bd;
+
+    font-size: 18px;
+
+    line-height: 1.7;
+}
+
+
+.hero-content .small {
+
+    color: #969381;
+
+    font-size: 14px;
+}
+
+
+/* =========================
+   BUTTON
+========================= */
+
+.primary-btn {
+
+    margin-top: 32px;
+
+    padding:
+        15px 22px;
+
+    border: 0;
+
+    border-radius: 12px;
+
+    background:
+        var(--yellow);
+
+    color: #17150b;
+
+    font-weight: 800;
+
+    cursor: pointer;
+
+    display: inline-flex;
+
+    gap: 25px;
+
+    align-items: center;
+
+    transition: .25s;
+}
+
+
+.primary-btn:hover {
+
+    transform:
+        translateY(-3px) scale(1.03);
+
+    box-shadow:
+        0 12px 35px rgba(255, 210, 28, .2);
+}
+
+
+.primary-btn:disabled {
+
+    cursor: wait;
+
+    opacity: .8;
+}
+
+
+/* =========================
+   GENERAL SECTIONS
+========================= */
+
+.gift,
+.photo-section,
+.final-section {
+
+    width:
+        min(1050px,
+            100%);
+
+    margin: auto;
+
+    padding:
+        100px 25px;
+
+    scroll-margin-top: 25px;
+}
+
+
+/* =========================
+   GIFT
+========================= */
+
+.gift {
+
+    display: grid;
+
+    grid-template-columns:
+        1fr 1fr;
+
+    gap: 70px;
+
+    align-items: center;
+}
+
+
+.bouquet-stage {
+
+    min-height: 570px;
+
+    position: relative;
+
+    display: grid;
+
+    place-items:
+        end center;
+
+    overflow: hidden;
+
+    border-radius: 30px;
+
+    background:
+        radial-gradient(circle at 50% 35%,
+            rgba(255, 206, 32, .15),
+            transparent 28%),
+        linear-gradient(145deg,
+            #191914,
+            #0f0f0d);
+
+    border:
+        1px solid #36352d;
+}
+
+
+.glow {
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    border-radius: 50%;
+
+    background:
+        rgba(255,
+            201,
+            28,
+            .11);
+
+    filter: blur(70px);
+
+    top: 80px;
+}
+
+
+/* =========================
+   FLOWERS
+========================= */
+
+.flower {
+
+    position: absolute;
+
+    font-size: 112px;
+
+    z-index: 3;
+
+    filter:
+        drop-shadow(0 12px 15px rgba(0, 0, 0, .35));
+
+    animation:
+        flowerFloat 3s ease-in-out infinite;
+}
+
+
+.f1 {
+    top: 100px;
+    left: 23%;
+    transform: rotate(-12deg);
+}
+
+
+.f2 {
+    top: 155px;
+    left: 43%;
+    font-size: 92px;
+    animation-delay: .3s;
+}
+
+
+.f3 {
+    top: 80px;
+    right: 19%;
+    animation-delay: .7s;
+}
+
+
+.f4 {
+    top: 220px;
+    left: 15%;
+    font-size: 84px;
+    animation-delay: .5s;
+}
+
+
+.f5 {
+    top: 210px;
+    right: 14%;
+    animation-delay: 1s;
+}
+
+
+.f6 {
+    top: 280px;
+    left: 40%;
+    font-size: 88px;
+    animation-delay: 1.2s;
+}
+
+
+.f7 {
+    top: 310px;
+    right: 22%;
+    font-size: 82px;
+    animation-delay: .9s;
+}
+
+
+.f8 {
+    top: 35px;
+    left: 41%;
+    font-size: 78px;
+    animation-delay: 1.4s;
+}
+
+
+/* =========================
+   BOUQUET
+========================= */
+
+.bouquet-paper {
+
+    position: relative;
+
+    width: 80%;
+
+    height: 300px;
+
+    background:
+        linear-gradient(135deg,
+            #25231a,
+            #15140f);
+
+    clip-path:
+        polygon(7% 0,
+            93% 0,
+            100% 100%,
+            0 100%);
+
+    border:
+        1px solid #4b4631;
+
+    z-index: 2;
+
+    display: flex;
+
+    align-items: end;
+
+    justify-content: center;
+
+    padding-bottom: 35px;
+}
+
+
+.ribbon {
+
+    position: absolute;
+
+    top: 35%;
+
+    background:
+        #d9a800;
+
+    color:
+        #201b08;
+
+    padding:
+        8px 18px;
+
+    font-size: 11px;
+
+    letter-spacing: 3px;
+
+    font-weight: 800;
+}
+
+
+.paper-note {
+
+    text-align: center;
+
+    color: #e9dfba;
+
+    font-family:
+        "DM Mono",
+        monospace;
+}
+
+
+.paper-note span {
+
+    display: block;
+
+    font-size: 20px;
+}
+
+
+.paper-note small {
+
+    display: block;
+
+    margin-top: 7px;
+
+    color: #a59c78;
+}
+
+
+/* =========================
+   CARDS
+========================= */
+
+.content-card,
+.photo-card,
+.final-card {
+
+    background:
+        rgba(24,
+            24,
+            21,
+            .92);
+
+    border:
+        1px solid #3a392f;
+
+    border-radius: 25px;
+
+    padding: 38px;
+
+    box-shadow:
+        0 25px 80px rgba(0, 0, 0, .25);
+}
+
+
+.eyebrow,
+.section-label {
+
+    color:
+        var(--yellow);
+
+    font:
+        11px "DM Mono",
+        monospace;
+
+    letter-spacing: 2px;
+}
+
+
+.content-card h2,
+.photo-card h2,
+.final-card h2 {
+
+    margin-top: 15px;
+
+    font-size:
+        clamp(28px,
+            4vw,
+            42px);
+
+    line-height: 1.1;
+}
+
+
+.message {
+
+    color: #d0cdbd;
+
+    line-height: 1.8;
+
+    margin-top: 25px;
+
+    font-size: 16px;
+}
+
+
+.message strong {
+
+    color: #fff1a8;
+}
+
+
+.joke {
+
+    margin-top: 30px;
+
+    padding: 18px;
+
+    border-left:
+        3px solid var(--yellow);
+
+    background:
+        rgba(255,
+            210,
+            28,
+            .05);
+
+    color: #aaa794;
+
+    line-height: 1.6;
+}
+
+
+/* =========================
+   PHOTO
+========================= */
+
+.photo-section {
+
+    padding-top: 40px;
+}
+
+
+.photo-card {
+
+    text-align: center;
+}
+
+
+.photo-card + .photo-card {
+
+    margin-top: 32px;
+}
+
+
+.photo-frame {
+
+    position: relative;
+
+    width:
+        min(520px,
+            100%);
+
+    aspect-ratio: 4 / 5;
+
+    margin:
+        30px auto 0;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    border:
+        1px solid #4b493d;
+
+    background: #22221d;
+}
+
+
+.photo-frame img {
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    display: block;
+}
+
+
+.photo-placeholder {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: grid;
+
+    place-content: center;
+
+    background:
+        linear-gradient(145deg,
+            #22221d,
+            #151511);
+
+    color: #8f8b79;
+}
+
+
+.photo-placeholder span {
+
+    font-size: 55px;
+
+    margin-bottom: 10px;
+}
+
+
+.photo-placeholder small {
+
+    margin-top: 8px;
+
+    font-family:
+        "DM Mono",
+        monospace;
+
+    color: #666456;
+}
+
+
+.photo-caption {
+
+    margin-top: 18px;
+
+    color: #888575;
+
+    font-size: 13px;
+}
+
+
+/* =========================
+   FINAL
+========================= */
+
+.final-section {
+
+    padding-top: 40px;
+
+    padding-bottom: 130px;
+}
+
+
+.final-card {
+
+    text-align: center;
+}
+
+
+.mini-flower {
+
+    font-size: 45px;
+}
+
+
+.final-card p {
+
+    margin-top: 15px;
+
+    color: #bcb8a7;
+}
+
+
+.actions {
+
+    margin-top: 28px;
+
+    display: flex;
+
+    justify-content: center;
+
+    gap: 15px;
+}
+
+
+.actions button {
+
+    border-radius: 12px;
+
+    padding:
+        12px 28px;
+
+    cursor: pointer;
+
+    font-weight: 800;
+
+    transition: .25s;
+}
+
+
+.yes-btn {
+
+    border: 0;
+
+    background:
+        var(--yellow);
+
+    color: #18160b;
+}
+
+
+.no-btn {
+
+    border:
+        1px solid #555247;
+
+    background:
+        transparent;
+
+    color: #aaa696;
+}
+
+
+.actions button:hover {
+
+    transform:
+        translateY(-3px);
+}
+
+
+#answer {
+
+    min-height: 25px;
+
+    margin-top: 25px;
+
+    color: #ffe36c;
+
+    font-weight: 700;
+}
+
+
+/* =========================
+   PETALS
+========================= */
+
+.petals {
+
+    position: fixed;
+
+    top: -50px;
+
+    z-index: 100;
+
+    pointer-events: none;
+
+    animation:
+        fall linear forwards;
+}
+
+
+.petal-bloom {
+
+    top: -90px;
+
+    filter:
+        drop-shadow(0 12px 18px rgba(0, 0, 0, .25));
+
+    text-shadow:
+        0 0 22px rgba(255, 210, 28, .35);
+}
+
+
+/* =========================
+   ANIMATIONS
+========================= */
+
+@keyframes fall {
+
+    to {
+
+        transform:
+            translate3d(var(--drift),
+                110vh,
+                0) rotate(500deg);
+
+        opacity: 0;
+    }
+}
+
+
+@keyframes float {
+
+    0%,
+    100% {
+        transform:
+            translateY(0) rotate(-2deg);
+    }
+
+    50% {
+        transform:
+            translateY(-13px) rotate(2deg);
+    }
+}
+
+
+@keyframes flowerFloat {
+
+    0%,
+    100% {
+        translate: 0 0;
+    }
+
+    50% {
+        translate: 0 -10px;
+    }
+}
+
+
+/* =========================
+   CELULAR
+========================= */
+
+@media (max-width: 800px) {
+
+    .hero {
+        padding: 15px;
+    }
+
+    .terminal-body {
+        padding: 25px 18px;
+    }
+
+    .gift {
+
+        grid-template-columns: 1fr;
+
+        gap: 35px;
+    }
+
+    .bouquet-stage {
+
+        min-height: 480px;
+    }
+
+    .flower {
+
+        font-size: 82px;
+    }
+
+    .f1 {
+        left: 17%;
+    }
+
+    .f3 {
+        right: 12%;
+    }
+
+    .f6 {
+        left: 37%;
+    }
+
+    .f7 {
+        right: 14%;
+        font-size: 66px;
+    }
+
+    .f8 {
+        top: 45px;
+        left: 40%;
+        font-size: 62px;
+    }
+
+    .content-card,
+    .photo-card,
+    .final-card {
+
+        padding: 25px;
+    }
+}
