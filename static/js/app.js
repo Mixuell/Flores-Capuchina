@@ -233,7 +233,21 @@ trackedPhotos.forEach((currentPhoto) => {
             ".photo-placeholder"
         );
 
-    currentPhoto.addEventListener("error", () => {
+    function showPhoto() {
+
+        currentPhoto.style.display = "block";
+
+        if (currentPlaceholder) {
+
+            currentPlaceholder.style.display =
+                "none";
+
+        }
+
+    }
+
+
+    function showPlaceholder() {
 
         currentPhoto.style.display = "none";
 
@@ -244,18 +258,27 @@ trackedPhotos.forEach((currentPhoto) => {
 
         }
 
+    }
+
+
+    currentPhoto.addEventListener("error", () => {
+
+        showPlaceholder();
+
     });
 
 
     currentPhoto.addEventListener("load", () => {
 
-        if (currentPlaceholder) {
-
-            currentPlaceholder.style.display =
-                "none";
-
-        }
+        showPhoto();
 
     });
+
+
+    if (currentPhoto.complete && currentPhoto.naturalWidth > 0) {
+
+        showPhoto();
+
+    }
 
 });
